@@ -12,7 +12,7 @@
 
 <body>
 
-   <section>
+   <section id="cover-area">
       <div class="container">
          <div class="cart">
             <div class="col-md-12 col-lg-10 mx-auto">
@@ -71,12 +71,18 @@
                   </div>
                </div>
                <div class="col-md-12 pt-4 pb-4">
-                  <button type="button" class="btn btn-success check-out">Check Out</button>
+                  <button id="check-button" type="button" class="btn btn-success check-out">Check Out</button>
                </div>
             </div>
          </div>
       </div>
    </section>
+<section>
+   <div id="check-area" class="checked-area">
+      <h3>Thank you for With us</h3>
+      <h5>Your Total Cost</h5>
+   </div>
+</section>
 </body>
 <script>
    // Phone event handler
@@ -123,6 +129,18 @@
       const productCount=parseInt(productInput.value);
       return productCount;
    }
+
+
+   //check out button event handler
+   const checkInput=document.getElementById("check-button");
+   checkInput.addEventListener("click" , function(){
+      const checkArea=document.getElementById("check-area");
+      checkArea.style.display="block";
+
+      const coverArea=document.getElementById("cover-area");
+      coverArea.style.display="none";
+      
+   })
    // Phone case event handler
    // function handleCaseChange(isIncrease){
    //    const addValue = document.getElementById("currentCasePrice");
